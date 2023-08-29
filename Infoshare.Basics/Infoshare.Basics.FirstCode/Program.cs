@@ -90,7 +90,8 @@
             char divide = '/';
             char multipy = '*';
 
-            var result = inputA + add.ToString() + inputB;
+            // Not finished yet
+            var result = inputA + + inputB;
             Console.WriteLine($"Result is: {result}");
 
 
