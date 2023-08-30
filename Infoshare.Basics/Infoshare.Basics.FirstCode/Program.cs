@@ -1,4 +1,6 @@
-﻿namespace Infoshare.Basics.FirstCode
+﻿using System.Security.Cryptography;
+
+namespace Infoshare.Basics.FirstCode
 {
     internal class Program
     {
@@ -85,14 +87,34 @@
 
             double inputA = 10.5;
             double inputB = 15.2;
+
             char add = '+';
             char substact = '-';
             char divide = '/';
             char multipy = '*';
 
+            var result2 = 2 + 3;
+
             // Not finished yet
-            var result = inputA + + inputB;
-            Console.WriteLine($"Result is: {result}");
+            var calculateResult = Calculate(add, inputA, inputB);
+            DisplayResult(calculateResult);
+            
+            static double Calculate(char op, double inputA, double inputB) 
+            {
+                switch (op)
+                {
+                    case '+': return inputA + inputB;
+                    case '-': return inputA - inputB;
+                    case '/': return inputA / inputB;
+                    case '*': return inputA * inputB;
+                    default: throw new ArgumentException("Invalid operator: {0}");
+                }
+            }
+
+            static void DisplayResult(double result)
+            {
+                Console.WriteLine($"The result is: {result}");
+            }
 
 
             //6. Napisz prosty program do naliczania rabatów w sklepie.
