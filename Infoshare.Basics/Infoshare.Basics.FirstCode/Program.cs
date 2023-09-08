@@ -85,18 +85,22 @@ namespace Infoshare.Basics.FirstCode
             //W zależności od wartości znaku (sign), wykonaj powiązaną operację i przypisz jej rezultat do zmiennej result.
             //Dostępne operacje: +,-,/,*
 
-            double inputA = 10.5;
-            double inputB = 15.2;
+            double inputA = 1;
+            double inputB = 6;
 
-            char add = '+';
-            char substact = '-';
-            char divide = '/';
-            char multipy = '*';
+            char choosenOperator;
 
-            var result2 = 2 + 3;
+            do
+            {
+                Console.Write("Insert operator: +, -, / or *: ");
+                char.TryParse(Console.ReadLine(), out choosenOperator);
+            } while (choosenOperator != '+');
 
-            // Not finished yet
-            var calculateResult = Calculate(add, inputA, inputB);
+
+
+
+
+            var calculateResult = Calculate(choosenOperator, inputA, inputB);
             DisplayResult(calculateResult);
             
             static double Calculate(char op, double inputA, double inputB) 
@@ -123,6 +127,10 @@ namespace Infoshare.Basics.FirstCode
             //Do zmiennej string promoCode jest przypisany kod promocyjny
             //Jeżeli kod promocyjny jest równy "DISCOUNT10" albo "BLACKFRIDAY20" zniżka powinna zostać naliczona
             //W innym wypadku zniżka nie powinna zostać naliczona
+
+            decimal price;
+            int discount;
+
 
 
             //7. Napisz prosty program wyliczający podwyżki dla pracowników firmy.
