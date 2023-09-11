@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using System.ComponentModel.Design;
+using System.Security.Cryptography;
 
 namespace Infoshare.Basics.FirstCode
 {
@@ -9,9 +10,8 @@ namespace Infoshare.Basics.FirstCode
             //1. Przypisz do zmiennej typu int dowolną liczbę i wyświetl ją na konsoli w formacie "Twoja szczesliwa liczba to X"
 
             int number = 10;
-            var numberLikeAPro = 10;
+
             Console.WriteLine($"Your lucky number is: {number}");
-            Console.WriteLine($"Your lucky number is: {numberLikeAPro}");
 
             //2. Przypisz do dwóch zmiennych typu int dwie dowolne liczby. Jedna zmienna powinna się nazywać number, druga luckyNumber.
             //Jeżeli liczba number jest taka sama jak luckyNumber zwróć: Bingo, wygrales!
@@ -41,7 +41,7 @@ namespace Infoshare.Basics.FirstCode
             {
                 Console.WriteLine("You are an adult.");
             }
-            else if (age < 18 || age <= 0)
+            else if (age < 18 && age <= 0)
             {
                 Console.WriteLine("You are a child.");
             }
@@ -58,20 +58,20 @@ namespace Infoshare.Basics.FirstCode
             //Inaczej wyświetl: Błąd
 
             var ageExercise4 = 15;
-            var sex = 'K';
+            var gender = 'K';
 
             if (ageExercise4 >= 18)
             {
-                if (sex == 'M')
+                if (gender == 'M')
                 {
                     Console.WriteLine("You are a male.");
                 }
-                else if (sex == 'K')
+                else if (gender == 'K')
                 {
                     Console.WriteLine("You are a female.");
                 }
             }
-            else if (ageExercise4 < 18 || ageExercise4 >= 0)
+            else if (ageExercise4 < 18 && ageExercise4 >= 0)
             {
                 Console.WriteLine("You are a child.");
             }
@@ -85,40 +85,37 @@ namespace Infoshare.Basics.FirstCode
             //W zależności od wartości znaku (sign), wykonaj powiązaną operację i przypisz jej rezultat do zmiennej result.
             //Dostępne operacje: +,-,/,*
 
-            double inputA = 1;
-            double inputB = 6;
+            //double inputA = 1;
+            //double inputB = 6;
 
-            char choosenOperator;
+            //char choosenOperator;
 
-            do
-            {
-                Console.Write("Insert operator: +, -, / or *: ");
-                char.TryParse(Console.ReadLine(), out choosenOperator);
-            } while (choosenOperator != '+');
-
-
+            //do
+            //{
+            //    Console.Write("Insert operator: +, -, / or *: ");
+            //    char.TryParse(Console.ReadLine(), out choosenOperator);
+            //} while (choosenOperator != '+' && choosenOperator != '-' && choosenOperator != '*' && choosenOperator != '/');
 
 
+            //var calculateResult = Calculate(choosenOperator, inputA, inputB);
+            //DisplayResult(calculateResult);
 
-            var calculateResult = Calculate(choosenOperator, inputA, inputB);
-            DisplayResult(calculateResult);
-            
-            static double Calculate(char op, double inputA, double inputB) 
-            {
-                switch (op)
-                {
-                    case '+': return inputA + inputB;
-                    case '-': return inputA - inputB;
-                    case '/': return inputA / inputB;
-                    case '*': return inputA * inputB;
-                    default: throw new ArgumentException("Invalid operator: {0}");
-                }
-            }
+            //static double Calculate(char op, double inputA, double inputB)
+            //{
+            //    switch (op)
+            //    {
+            //        case '+': return inputA + inputB;
+            //        case '-': return inputA - inputB;
+            //        case '/': return inputA / inputB;
+            //        case '*': return inputA * inputB;
+            //        default: throw new ArgumentException("Invalid operator: {0}");
+            //    }
+            //}
 
-            static void DisplayResult(double result)
-            {
-                Console.WriteLine($"The result is: {result}");
-            }
+            //static void DisplayResult(double result)
+            //{
+            //    Console.WriteLine($"The result is: {result}");
+            //}
 
 
             //6. Napisz prosty program do naliczania rabatów w sklepie.
@@ -128,8 +125,17 @@ namespace Infoshare.Basics.FirstCode
             //Jeżeli kod promocyjny jest równy "DISCOUNT10" albo "BLACKFRIDAY20" zniżka powinna zostać naliczona
             //W innym wypadku zniżka nie powinna zostać naliczona
 
-            decimal price;
-            int discount;
+            //decimal price = 100m;
+            //int discount = 20;
+            //string promoCode = "BLACKFRIDAY20";
+
+            //if (promoCode == "DISCOUNT10")
+            //{
+            //    price = price - price * ((decimal)discount / 100);
+            //}
+
+
+            //Console.WriteLine($"Promo price = {price}");
 
 
 
@@ -142,6 +148,23 @@ namespace Infoshare.Basics.FirstCode
             //jeżeli efektywność pracownika jest powyżej 151 to podwyżka wynosi 20%
             //wynikiem jest pensja po podwyżce
 
+            int efficiency = 120;
+            float salary = 5000f;
+
+            if (efficiency > 100 && efficiency <= 125)
+            {
+                salary = salary * 1.1f;
+            }
+            else if (efficiency > 125 && efficiency <= 150)
+            {
+                salary = salary * 1.15f;
+            }
+            else if (efficiency > 150)
+            {
+                salary = salary * 1.2f;
+            }
+
+            Console.WriteLine(salary);
 
             //8. Napisz kalkulator BMI. Na wejściu otrzymujesz 2 wartości:
             //decimal weight
