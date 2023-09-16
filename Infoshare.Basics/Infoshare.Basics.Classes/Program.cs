@@ -1,4 +1,7 @@
-﻿namespace Infoshare.Basics.Classes
+﻿using Infoshare.Basics.Classes.Data;
+using Infoshare.Basics.Classes.Repositories;
+
+namespace Infoshare.Basics.Classes
 {
     internal class Program
     {
@@ -6,13 +9,23 @@
         {
             //1. Stwórz obiekt klasy ProductRepository. Wywołaj na nim metodę Get() i przypisz jej wynik do zmiennej Product product. Wyświetl nazwę produktu.
 
-            
+            //ProductRepository productRepository = new ProductRepository();
+            //Product product = productRepository.Get();
+            //Console.WriteLine(product.Name);
+            //Console.Write(productRepository.Get().Name);
+            // product <-- Get() <--- GetPrivateProduct
+
             //2. Stwórz klasę Point
             //Klasa powinna mieć dwie właściwości typu int: X i Y
             //Konstruktor klasy powinien przyjmować na wejściu dwie wartości int x i int y, które powinny zostać przypisane do właściwości X i Y.
             //Klasa Point powinna mieć metodę Sum, która sumuje wartości X oraz Y i zwraca wynik sumowania
             //Stwórz obiekt Point i wywołaj metodę Sum(). Rezultat metody Sum wyświetl na konsoli.
+            Point point = new Point(1, 2);
+            Point point2 = new Point(4, 5);
+            int sum = point.Sum();
+            int sum2 = point2.Sum();
 
+            Console.WriteLine(sum);
 
             //3. Stwórz klasę Address
             //Klasa Address powinna mieć właściwości:
@@ -43,7 +56,9 @@
             //Divide()  <- podziel Number1 podziel Number2 i zwróć wynik
             //Każda metoda powinna mieć parametr wejściowy typu out string message, do którego wewnątrz metody powinna zostać przypisana wiadomość: "Wywołano metodę XYZ"
 
-            
+            Calculator calculator = new Calculator(2, 3);
+            calculator.Multiply(out string message);
+
             //6. Napisz klasę statyczną WelcomeMessager
             //Klasa powinna mieć jedną metodę statyczną GetWelcomeMessage. Metoda powinna mieć jeden parametr wejściowy typu string - name.
             //Metoda powinna zwracać wiadomość "Witamy, {name}"
