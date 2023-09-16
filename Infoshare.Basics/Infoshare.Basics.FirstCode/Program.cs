@@ -148,23 +148,23 @@ namespace Infoshare.Basics.FirstCode
             //jeżeli efektywność pracownika jest powyżej 151 to podwyżka wynosi 20%
             //wynikiem jest pensja po podwyżce
 
-            int efficiency = 120;
-            float salary = 5000f;
+            //int efficiency = 120;
+            //float salary = 5000f;
 
-            if (efficiency > 100 && efficiency <= 125)
-            {
-                salary = salary * 1.1f;
-            }
-            else if (efficiency > 125 && efficiency <= 150)
-            {
-                salary = salary * 1.15f;
-            }
-            else if (efficiency > 150)
-            {
-                salary = salary * 1.2f;
-            }
+            //if (efficiency > 100 && efficiency <= 125)
+            //{
+            //    salary = salary * 1.1f;
+            //}
+            //else if (efficiency > 125 && efficiency <= 150)
+            //{
+            //    salary = salary * 1.15f;
+            //}
+            //else if (efficiency > 150)
+            //{
+            //    salary = salary * 1.2f;
+            //}
 
-            Console.WriteLine(salary);
+            //Console.WriteLine(salary);
 
             //8. Napisz kalkulator BMI. Na wejściu otrzymujesz 2 wartości:
             //decimal weight
@@ -176,6 +176,28 @@ namespace Infoshare.Basics.FirstCode
             // "nadwaga" gdy BMI > 24.9 i BMI <= 29.9
             // "otyłość" gdy BMI > 29.9
 
+            decimal weight = 91.5m;
+            decimal height = 1.8m;
+            //decimal BMI = weight * decimal.Parse(Math.Pow(2, 2));
+            decimal BMI = weight / (height * height); // czy jest jakiś ładnieszy sposób na zrobienie potęgi? Nie czaję, dlaczego nie można zrobić tego jak w linijce wyżej.
+
+            if (BMI < 18.5M)
+            {
+                Console.WriteLine("Niedowaga");
+            }
+            else if (BMI >= 18.5M && BMI <= 24.9M)
+            {
+                Console.WriteLine("Waga prawidłowa");
+            }
+            else if (BMI > 24.9M && BMI <= 29.9M)
+            {
+                Console.WriteLine("Nadwaga");
+            }
+            else
+            {
+                Console.WriteLine("Otyłość");
+            }
+
             //DODATKOWE
             //1. Papier kamień nożyce. Na wejściu przyjmij dwie wartości typu char, dopuszczalne wartości to
             //p - papier
@@ -183,10 +205,50 @@ namespace Infoshare.Basics.FirstCode
             //n - nożyce
             //Jako wynik podaj rezultat rozgrywki. Jeżeli wygrywa gracz pierwszy zwróć "w1", jeżeli drugi - "w2", a przypadku remisu zwróć "r"
 
+            //Console.Write("Wybierz: P, K lub N: ");
+            //char.TryParse(Console.ReadLine(), out char input);
+
+            //Console.Write("Ponownie wybierz: P, K lub N: ");
+            //char.TryParse(Console.ReadLine(), out char input2);
+
+            //if (input == 'P' && input2 == 'K' || input2 == 'P' && input == 'K')
+            //{
+            //    Console.WriteLine("Papier wygrywa");
+            //}
+            //else if (input == 'N' && input2 == 'K' || input2 == 'N' && input == 'K')
+            //{
+            //    Console.WriteLine("Kamień wygrywa");
+            //}
+            //else if (input == 'P' && input2 == 'N' || input2 == 'P' && input == 'N')
+            //{
+            //    Console.WriteLine("Nożyce wygrywają");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Remis");
+            //}
+
+
             //2. Policz powierzchnię bryły o wymiarach x,y,z. Jeżeli którykolwiek z wymiarów jest mniejszy bądź równy 0, zwróć komunikat: "BLAD!"
+
+            var a = 10;
+            var b = 0;
+            var c = 10;
+
+            if (a != 0 && b != 0 && c != 0)
+            {
+                var volume = a * b * c;
+                Console.WriteLine(volume);
+            }
+            else
+            {
+                Console.WriteLine("error");
+            }
 
             //3. Sprawdź czy trójkąt jest prostokątny. Na wejściu podane są liczby a, b, c. Wyznacz która długość jest najdłuższa i skorzystaj z wzoru a^2 + b^2 = c^2,
             // Jeżeli trójkąt jest prostokątny to zwróć 'T', inaczej zwróć 'F'
+
+            // nie czaję
 
             //4. Na wejściu przyjmij dwie wartości typu int: x i y, są to długości boków prostokąta. Jeżeli boki są równe zwróć "kwadrat", jeżeli nie zwróć "prostokat"
         }

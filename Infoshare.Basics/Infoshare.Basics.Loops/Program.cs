@@ -142,16 +142,16 @@ namespace Infoshare.Basics.Loops
             //...
 
 
-            for (int j = 1; j <= 10; j++)
-            {
-                for (int i = 1; i <= 10; i++)
-                {
-                    var result = j * i;
-                    Console.Write($"{result} ");
+            //for (int j = 1; j <= 10; j++)
+            //{
+            //    for (int i = 1; i <= 10; i++)
+            //    {
+            //        var result = j * i;
+            //        Console.Write($"{result} ");
 
-                }
-                Console.WriteLine();
-            }
+            //    }
+            //    Console.WriteLine();
+            //}
 
 
 
@@ -167,11 +167,49 @@ namespace Infoshare.Basics.Loops
             //W każdym obiegu pętli podaj jedną liczbę
             //Na koniec programu wyświetl największą z podanych liczb
 
+            //Console.WriteLine("How many times the loop should be executed? Insert number: ");
+            //int.TryParse(Console.ReadLine(), out var loopCounter);
+            //int biggestNumber = 0; // zastanawiam się, czy to dobre rozwiązanie, bo przecież użytkownik może podawać liczby ujemne...
+
+            //for (int i = 0; i < loopCounter; i++)
+            //{
+            //    Console.WriteLine("Insert any number: ");
+            //    int.TryParse(Console.ReadLine(), out var inputResult);
+            //    if (inputResult > biggestNumber)
+            //    {
+            //        biggestNumber = inputResult;
+            //    }
+            //}
+
+            //Console.WriteLine($"The biggest number is {biggestNumber}");
+
             //3. Na wejściu podaj liczbę n oznaczającą liczbę operacji.
             //W pętli podaj n dowolnych liczb. (dodatnich, bądź ujemnych)
             //Jako wynik programu zwróć dwie wartości:
             //Ilość podanych liczb dodatnich (bądź równych 0)
             //Ilość podanych liczb ujemnych
+
+            //Console.WriteLine("How many times the loop should be executed? Insert number: ");
+            //int.TryParse(Console.ReadLine(), out var loopCounter2);
+            //var greatherThan0 = 0;
+            //var loweThan0 = 0;
+
+            //for (int i = 0; i < loopCounter2; i++)
+            //{
+            //    Console.WriteLine("Insert any number: ");
+            //    int.TryParse(Console.ReadLine(), out var inputResult2);
+
+            //    if (inputResult2 >= 0)
+            //    {
+            //        greatherThan0++;
+            //    }
+            //    else
+            //    {
+            //        loweThan0++;
+            //    }
+            //}
+
+            //Console.WriteLine($"Numbers greather than 0: {greatherThan0}, numbers lower than 0: {loweThan0}");
 
             //4. Napisz program symulujący sklep.
             //Na wejściu podaj liczbę n oznaczającą liczbę operacji
@@ -181,6 +219,31 @@ namespace Infoshare.Basics.Loops
             //Jeżeli wykonywana jest operacja sprzedaży, to konto sklepu jest zasilane kwotą 'amount'
             //Jeżeli wykonywana jest operacja zakupu (asortymentu z magazynu), to z konta jest odejmowana kwota 'amount'
             //Po wykonaniu wszystkich obiegów pętli zwracane jest końcowe saldo sklepu
+
+            var numberOfOperations = 3;
+            var amount = 0;
+ 
+            for (int i = 0; i < numberOfOperations; i++)
+            {
+                Console.Write("Select operation type. S - for sale, B - for buy: ");
+                string operation = Console.ReadLine();
+                Console.Write("Insert price: ");
+                int.TryParse(Console.ReadLine(), out var price);
+                if (operation == "S")
+                {
+                    amount += price;
+                }
+                else if (operation == "B")
+                {
+                    amount -= price;
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect input.");
+                }
+            }
+
+            Console.WriteLine($"Total income / loss: {amount}");
         }
     }
 }
