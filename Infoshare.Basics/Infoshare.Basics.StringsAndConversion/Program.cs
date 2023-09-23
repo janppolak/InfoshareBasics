@@ -55,9 +55,18 @@
 
             //7. Parzyste słowa w zdaniu, zapisanym w tablicy string, zamień na wielkie litery. Następnie złącz wszystkie wyrazy w zdaniu i rozdziel słowa spacjami.
 
-            //string[] strings = { "To", "jest", "krótkie", "zdanie" };
-            //var counter = 1;
-            //string item2;
+            string[] strings = { "To", "jest", "krótkie", "zdanie" };
+
+            for (int i = 0; i < strings.Length; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    strings[i] = strings[i].ToUpper();
+                }
+            }
+
+            Console.WriteLine(string.Join(' ', strings));
+
 
             //foreach (var item in strings)
             //{
